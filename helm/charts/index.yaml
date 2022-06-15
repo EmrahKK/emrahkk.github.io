@@ -8,7 +8,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.8.1
-    created: "2022-06-15T08:29:24.744838438+03:00"
+    created: "2022-06-15T15:55:24.025239192+03:00"
     description: A Helm chart for cert-manager
     digest: b8d0dd5c95398db9308b649f7ef70ca3a0db1bb8859b43f9672c7f66871d0ef9
     home: https://github.com/cert-manager/cert-manager
@@ -30,7 +30,7 @@ entries:
   echo-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-15T08:29:24.745863911+03:00"
+    created: "2022-06-15T15:55:24.025577445+03:00"
     description: A Helm chart for Kubernetes
     digest: cf886a7daad4594a1ec3ebb1dc65d97b93e19cd1f494ce7bee4923293782eaba
     name: echo-service
@@ -48,7 +48,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.57.0
-    created: "2022-06-15T08:29:24.776495717+03:00"
+    created: "2022-06-15T15:55:24.056702005+03:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -98,4 +98,25 @@ entries:
     urls:
     - kube-prometheus-stack-36.0.1.tgz
     version: 36.0.1
-generated: "2022-06-15T08:29:24.739659613+03:00"
+  logging-operator:
+  - apiVersion: v1
+    appVersion: 3.17.7
+    created: "2022-06-15T15:55:24.063902637+03:00"
+    description: A Helm chart to install Banzai Cloud logging-operator
+    digest: ccb74bcddbaeaaf051ac6e526e2dcbab4df682553ddcce8b6808dd50600c7e26
+    name: logging-operator
+    urls:
+    - logging-operator-3.17.7.tgz
+    version: 3.17.7
+  logging-operator-logging:
+  - apiVersion: v1
+    appVersion: 3.17.7
+    created: "2022-06-15T15:55:24.064702377+03:00"
+    description: A Helm chart to configure logging resource for the Logging operator
+    digest: 662667f6be3c33b66f8437594040a5f3ebe8723d8a43a21dd9a73096c5afe29e
+    icon: https://raw.githubusercontent.com/banzaicloud/logging-operator/master/docs/img/icon.png
+    name: logging-operator-logging
+    urls:
+    - logging-operator-logging-3.17.7.tgz
+    version: 3.17.7
+generated: "2022-06-15T15:55:24.021237008+03:00"
