@@ -1,0 +1,148 @@
+{{- if .Values.apim.enabled -}}
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:  
+  name: "{{ .Release.Name }}-token-renewal"
+rules:
+- apiGroups: ["","apps", "extensions"]
+  resources: ["secrets","deployments"]
+  resourceNames: ["{{ include "azure-api-management-gateway.fullname" . }}"]
+  verbs: ["get", "patch", "list", "watch"]
+{{- end }}
+---
+{{- if .Values.apim.enabled -}}
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: "{{ .Release.Name }}-token-renewal"  
+subjects:
+- kind: ServiceAccount
+  name: "{{ .Release.Name }}-token-renewal"  
+roleRef:
+  kind: Role
+  name: "{{ .Release.Name }}-token-renewal"
+  apiGroup: ""
+{{- end }}
+---
+{{- if .Values.apim.enabled -}}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: "{{ .Release.Name }}-token-renewal"
+{{- end }}
+---
+{{- if .Values.apim.enabled -}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "{{ .Release.Name }}-token-renewal"
+  labels:
+    app.kubernetes.io/name: {{ include "azure-api-management-gateway.name" . }}
+    helm.sh/chart: {{ include "azure-api-management-gateway.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+type: Opaque
+data:
+  azClientId: {{ .Values.apim.azClientId | b64enc | quote }}
+  azClientSecret: {{ .Values.apim.azClientSecret | b64enc | quote }}
+  azSubscriptionId: {{ .Values.apim.azSubscriptionId | b64enc | quote }}
+  resourceGroupName: {{ .Values.apim.resourceGroupName | b64enc | quote }}
+  serviceName: {{ .Values.apim.serviceName | b64enc | quote }}
+  gatewayId: {{ .Values.apim.gatewayId | b64enc | quote }}
+{{- end }}
+---
+{{- if .Values.apim.enabled -}}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  annotations:
+  name: "{{ .Release.Name }}-token-renewal"
+spec:
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+    spec:
+      backoffLimit: 0
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:          
+          serviceAccountName: "{{ .Release.Name }}-token-renewal"
+          initContainers:
+            - name: token-generate
+              image: mymharbor.lcwaikiki.local/devops/apim-gateway-token-generate
+              imagePullPolicy: Always
+              command:
+              - /bin/bash
+              - -c
+              - |-   
+                cd /work-dir           
+                python /script/tokenRenewal.py
+              env:
+              - name: azClientId
+                valueFrom:
+                  secretKeyRef:
+                    name: "{{ .Release.Name }}-token-renewal"
+                    key: azClientId
+              - name: azClientSecret
+                valueFrom:
+                  secretKeyRef:
+                    name: "{{ .Release.Name }}-token-renewal"
+                    key: azClientSecret
+              - name: azSubscriptionId
+                valueFrom:
+                  secretKeyRef:
+                    name: "{{ .Release.Name }}-token-renewal"
+                    key: azSubscriptionId
+              - name: resourceGroupName
+                valueFrom:
+                  secretKeyRef:
+                    name: "{{ .Release.Name }}-token-renewal"
+                    key: resourceGroupName
+              - name: serviceName
+                valueFrom:
+                  secretKeyRef:
+                    name: "{{ .Release.Name }}-token-renewal"
+                    key: serviceName
+              - name: gatewayId
+                valueFrom:
+                  secretKeyRef:
+                    name: "{{ .Release.Name }}-token-renewal"
+                    key: gatewayId
+              volumeMounts:
+              - name: workdir
+                mountPath: "/work-dir"
+          containers:
+          - name: "{{ .Release.Name }}-token-renewal"
+            image: mymharbor.lcwaikiki.local/docker.io/bitnami/kubectl:1.20
+            imagePullPolicy: IfNotPresent
+            command:
+              - /bin/sh
+              - -c
+              - |-              
+                cd /work-dir
+                kubectl get secret {{ include "azure-api-management-gateway.fullname" . }} -n {{ .Release.Namespace }} -o json | jq --arg gatewaykey "$(base64 -w 0 token.txt)" '.data["gateway-key"]=$gatewaykey'  | kubectl apply -f -                
+                cat token.txt
+                kubectl rollout restart deployment {{ include "azure-api-management-gateway.fullname" . }} -n {{ .Release.Namespace }}
+            volumeMounts:
+            - name: workdir
+              mountPath: "/work-dir"
+            env:
+            - name: AWS_DEFAULT_REGION
+              value: eu-west-1            
+          volumes:
+          - name: workdir
+            emptyDir: {}
+          dnsPolicy: Default
+          hostNetwork: true
+          restartPolicy: Never
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          activeDeadlineSeconds: 120
+  schedule: "{{ .Values.apim.tokenRenewalSchedule | default "0 0 1,15 * *" }}"
+  successfulJobsHistoryLimit: 3
+  suspend: false
+{{- end }}  

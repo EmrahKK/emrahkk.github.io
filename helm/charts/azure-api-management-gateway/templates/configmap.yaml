@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "azure-api-management-gateway.fullname" . }}
+  labels:
+    {{- include "azure-api-management-gateway.labels" . | nindent 4 }}
+data:
+  config.service.endpoint: {{ .Values.gateway.configuration.uri | quote }}
+  telemetry.metrics.cloud: {{ .Values.observability.azureMonitor.metrics.enabled | quote }}
+  telemetry.logs.local.localsyslog.endpoint: '"/dev/log"'
+  telemetry.logs.local.localsyslog.facility: '"7"'
+  telemetry.metrics.local: statsd
+  telemetry.metrics.local.statsd.endpoint: "{{ .Release.Name }}-udpproxy:8125"
+  telemetry.metrics.local.statsd.sampling: "1"
+  telemetry.metrics.local.statsd.tag-format: dogStatsD
+  observability.opentelemetry.enabled: {{ .Values.observability.opentelemetry.enabled | quote }}
+{{- if eq .Values.observability.opentelemetry.enabled true }}
+  observability.opentelemetry.collector.uri: {{ .Values.observability.opentelemetry.collector.uri | quote }}
+  {{ if .Values.observability.opentelemetry.histogram.buckets -}}
+  observability.opentelemetry.histogram.buckets: {{ .Values.observability.opentelemetry.histogram.buckets | quote }}
+  {{ end }}
+{{- end }}

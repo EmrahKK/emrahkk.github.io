@@ -1,0 +1,134 @@
+# Default values for azure-api-management-gateway.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: mcr.microsoft.com/azure-api-management/gateway
+  pullPolicy: IfNotPresent
+  tag: 
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# APIM token generate and renewal
+apim:
+  enabled: false
+  azClientId:
+  azClientSecret:
+  azSubscriptionId:
+  resourceGroupName:
+  serviceName:
+  gatewayId:
+  tokenRenewalSchedule: "0 0 1,15 * *"
+
+
+gateway:
+  configuration:
+    uri: 
+  auth:
+    # When an existing secret is configured, the value specified here will not be used
+    key: 
+
+secret:
+  createSecret: true
+  existingSecretName: ""
+
+observability:
+  azureMonitor:
+    metrics:
+      enabled: true
+  opentelemetry:
+    enabled: false
+    collector:
+      uri: 
+    histogram:
+      # Specify custom bucket sizes using ',' seperator.
+      # Example: '10,20'
+      buckets: 
+
+dapr:
+  enabled: false
+  app:
+    id:
+  config: tracing
+  logging:
+    useJsonOutput: true
+    level: info
+
+service:
+  type: ClusterIP
+  ports:
+    http: 8080
+    https: 8081
+  annotations: {}
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+serviceAccountName: default
+
+probes:
+  readiness:
+    httpGet:
+      path: /status-0123456789abcdef
+      port: http
+  liveness:
+    httpGet:
+      path: /status-0123456789abcdef
+      port: http
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+highAvailability:
+  enabled: false
+  disruption:
+    maximumUnavailable: 25%
+  podTopologySpread:
+    whenUnsatisfiable: ScheduleAnyway
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+securityContext: {}
+  # allowPrivilegeEscalation: false
+  # runAsNonRoot: true
+  # runAsUser: 1001       # This is a built-in user, but you can use any user ie 1000 as well
+  # runAsGroup: 2000      # This is just an example
+  # privileged: false
+  # capabilities:
+  #   drop:
+  #   - all
+
+podSecurityContext: {}
+  # fsGroup: 2000
+  # fsGroupChangePolicy: OnRootMismatch # "OnRootMismatch" or "Always"
+  # runAsNonRoot: true
+  # runAsUser: 1001       # This is a built-in user, but you can use any user ie 1000 as well
+  # runAsGroup: 2000      # This is just an example
