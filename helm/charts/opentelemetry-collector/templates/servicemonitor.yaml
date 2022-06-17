@@ -15,4 +15,6 @@ spec:
       component: standalone-collector
   endpoints:
   {{- toYaml .Values.serviceMonitor.metricsEndpoints | nindent 2 }}
+  namespaceSelector:
+  {{- toYaml .Values.serviceMonitor.namespaceSelector | nindent 4 }}  
 {{- end }}
