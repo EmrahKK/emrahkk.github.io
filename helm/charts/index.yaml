@@ -3,10 +3,10 @@ entries:
   azure-api-management-gateway:
   - apiVersion: v2
     appVersion: 2.0.3
-    created: "2022-06-16T17:11:54.4350306+03:00"
+    created: "2022-06-17T10:07:22.024742157+03:00"
     description: A Helm chart to deploy the self-hosted gateway of Azure API Management
       on Kubernetes
-    digest: f1c58a55aee0b2de670582fcf9efc027db9017082529b17edc303ea03be7f773
+    digest: 8189ff206594c4dc56f77e95b7e563b868aa0f0d1f91630ddc21df4fc152aa05
     home: https://azure.microsoft.com/en-us/services/api-management/
     icon: https://github.com/Azure/API-Management/raw/main/media/apim-logo.png
     keywords:
@@ -39,7 +39,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.8.1
-    created: "2022-06-16T17:11:54.440451472+03:00"
+    created: "2022-06-17T10:07:22.030573148+03:00"
     description: A Helm chart for cert-manager
     digest: b8d0dd5c95398db9308b649f7ef70ca3a0db1bb8859b43f9672c7f66871d0ef9
     home: https://github.com/cert-manager/cert-manager
@@ -61,7 +61,7 @@ entries:
   echo-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-16T17:11:54.441673577+03:00"
+    created: "2022-06-17T10:07:22.031710947+03:00"
     description: A Helm chart for Kubernetes
     digest: cf886a7daad4594a1ec3ebb1dc65d97b93e19cd1f494ce7bee4923293782eaba
     name: echo-service
@@ -79,7 +79,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.57.0
-    created: "2022-06-16T17:11:54.472879449+03:00"
+    created: "2022-06-17T10:07:22.060855242+03:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -132,7 +132,7 @@ entries:
   logging-operator:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-06-16T17:11:54.477406692+03:00"
+    created: "2022-06-17T10:07:22.068201732+03:00"
     description: A Helm chart to install Banzai Cloud logging-operator
     digest: ccb74bcddbaeaaf051ac6e526e2dcbab4df682553ddcce8b6808dd50600c7e26
     name: logging-operator
@@ -142,7 +142,7 @@ entries:
   logging-operator-logging:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-06-16T17:11:54.477880141+03:00"
+    created: "2022-06-17T10:07:22.069343127+03:00"
     description: A Helm chart to configure logging resource for the Logging operator
     digest: 662667f6be3c33b66f8437594040a5f3ebe8723d8a43a21dd9a73096c5afe29e
     icon: https://raw.githubusercontent.com/banzaicloud/logging-operator/master/docs/img/icon.png
@@ -150,4 +150,4 @@ entries:
     urls:
     - logging-operator-logging-3.17.7.tgz
     version: 3.17.7
-generated: "2022-06-16T17:11:54.434139176+03:00"
+generated: "2022-06-17T10:07:22.022808021+03:00"
