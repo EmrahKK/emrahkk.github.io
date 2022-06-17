@@ -1,0 +1,11 @@
+{{- if eq .Values.mode "deployment" -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "opentelemetry-collector.fullname" . }}
+  labels:
+    {{- include "opentelemetry-collector.labels" . | nindent 4 }}
+data:
+  relay: |
+    {{- include "opentelemetry-collector.deploymentConfig" . | nindent 4 -}}
+{{- end }}
