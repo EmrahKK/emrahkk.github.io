@@ -9,10 +9,7 @@ data:
   telemetry.metrics.cloud: {{ .Values.observability.azureMonitor.metrics.enabled | quote }}
   telemetry.logs.local.localsyslog.endpoint: '"/dev/log"'
   telemetry.logs.local.localsyslog.facility: '"7"'
-  telemetry.metrics.local: statsd
-  telemetry.metrics.local.statsd.endpoint: "{{ .Release.Name }}-udpproxy:8125"
-  telemetry.metrics.local.statsd.sampling: "1"
-  telemetry.metrics.local.statsd.tag-format: dogStatsD
+  telemetry.logs.std: json
   observability.opentelemetry.enabled: {{ .Values.observability.opentelemetry.enabled | quote }}
 {{- if eq .Values.observability.opentelemetry.enabled true }}
   observability.opentelemetry.collector.uri: {{ .Values.observability.opentelemetry.collector.uri | quote }}
