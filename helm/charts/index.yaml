@@ -3,7 +3,7 @@ entries:
   azure-api-management-gateway:
   - apiVersion: v2
     appVersion: 2.0.3
-    created: "2022-06-21T10:03:00.081660427+03:00"
+    created: "2022-06-25T13:16:11.611872661+03:00"
     description: A Helm chart to deploy the self-hosted gateway of Azure API Management
       on Kubernetes
     digest: f3b331876b0dbebc5a90bd854e6f2c1426938f12e90f08f9c8daf09e17d3e6bc
@@ -39,7 +39,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.8.1
-    created: "2022-06-21T10:03:00.090372529+03:00"
+    created: "2022-06-25T13:16:11.617061552+03:00"
     description: A Helm chart for cert-manager
     digest: b8d0dd5c95398db9308b649f7ef70ca3a0db1bb8859b43f9672c7f66871d0ef9
     home: https://github.com/cert-manager/cert-manager
@@ -61,9 +61,9 @@ entries:
   echo-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-21T10:03:00.09146149+03:00"
+    created: "2022-06-25T13:16:11.618067363+03:00"
     description: A Helm chart for Kubernetes
-    digest: cf886a7daad4594a1ec3ebb1dc65d97b93e19cd1f494ce7bee4923293782eaba
+    digest: 63527904752055cf1023f4ab8475b54d71a56ec39595f9f084f1766cb992178b
     name: echo-service
     type: application
     urls:
@@ -79,7 +79,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.57.0
-    created: "2022-06-21T10:03:00.121165787+03:00"
+    created: "2022-06-25T13:16:11.647844052+03:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -132,7 +132,7 @@ entries:
   logging-operator:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-06-21T10:03:00.127626817+03:00"
+    created: "2022-06-25T13:16:11.653708617+03:00"
     description: A Helm chart to install Banzai Cloud logging-operator
     digest: ccb74bcddbaeaaf051ac6e526e2dcbab4df682553ddcce8b6808dd50600c7e26
     name: logging-operator
@@ -142,7 +142,7 @@ entries:
   logging-operator-logging:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-06-21T10:03:00.12890671+03:00"
+    created: "2022-06-25T13:16:11.654660834+03:00"
     description: A Helm chart to configure logging resource for the Logging operator
     digest: 662667f6be3c33b66f8437594040a5f3ebe8723d8a43a21dd9a73096c5afe29e
     icon: https://raw.githubusercontent.com/banzaicloud/logging-operator/master/docs/img/icon.png
@@ -153,7 +153,7 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.53.0
-    created: "2022-06-21T10:03:00.133110036+03:00"
+    created: "2022-06-25T13:16:11.658454052+03:00"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: 5d85ddf98ec42a6cb525c3949e38de1a99b5715e742d171003dbbbe3be37241e
     home: https://opentelemetry.io/
@@ -171,4 +171,4 @@ entries:
     urls:
     - opentelemetry-collector-0.20.0.tgz
     version: 0.20.0
-generated: "2022-06-21T10:03:00.079624714+03:00"
+generated: "2022-06-25T13:16:11.610959049+03:00"
