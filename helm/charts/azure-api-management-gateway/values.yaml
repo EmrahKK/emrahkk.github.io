@@ -13,18 +13,6 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-# APIM token generate and renewal
-apim:
-  enabled: false
-  azClientId:
-  azClientSecret:
-  azSubscriptionId:
-  resourceGroupName:
-  serviceName:
-  gatewayId:
-  tokenRenewalSchedule: "0 0 1,15 * *"
-
-
 gateway:
   configuration:
     uri: 
@@ -37,6 +25,24 @@ secret:
   existingSecretName: ""
 
 observability:
+  logs:
+    std:
+      format: text
+      level: info
+      useColor: true
+    local:
+      type: auto
+      localsyslog:
+        endpoint:
+        facility:
+      rfc5424:
+        endpoint:
+        facility:
+      journal:
+        endpoint:
+      json:
+        endpoint: 127.0.0.1:8888
+
   azureMonitor:
     metrics:
       enabled: true
@@ -48,6 +54,20 @@ observability:
       # Specify custom bucket sizes using ',' seperator.
       # Example: '10,20'
       buckets: 
+  statsD:
+    enabled: false
+    endpoint: 
+    sampling: 1
+    tagFormat: dogStatsD
+
+security:
+  tls:
+    server:
+      ciphers:
+        allowedSuites: 
+    client:
+      ciphers:
+        allowedSuites: 
 
 dapr:
   enabled: false
