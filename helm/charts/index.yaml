@@ -3,7 +3,7 @@ entries:
   azure-api-management-gateway:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2022-06-28T09:24:36.831206434+03:00"
+    created: "2022-07-04T09:36:15.003321491+03:00"
     description: A Helm chart to deploy the self-hosted gateway of Azure API Management
       on Kubernetes
     digest: c6d5978a5bf8ecf89b15f2442ec6fde0497be5451252748f76baef0aa780c729
@@ -39,7 +39,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.8.1
-    created: "2022-06-28T09:24:36.835701381+03:00"
+    created: "2022-07-04T09:36:15.011229837+03:00"
     description: A Helm chart for cert-manager
     digest: b8d0dd5c95398db9308b649f7ef70ca3a0db1bb8859b43f9672c7f66871d0ef9
     home: https://github.com/cert-manager/cert-manager
@@ -61,7 +61,7 @@ entries:
   echo-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-28T09:24:36.836044494+03:00"
+    created: "2022-07-04T09:36:15.01222798+03:00"
     description: A Helm chart for Kubernetes
     digest: 63527904752055cf1023f4ab8475b54d71a56ec39595f9f084f1766cb992178b
     name: echo-service
@@ -79,7 +79,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.57.0
-    created: "2022-06-28T09:24:36.869490499+03:00"
+    created: "2022-07-04T09:36:15.047888519+03:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -132,7 +132,7 @@ entries:
   logging-operator:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-06-28T09:24:36.873470358+03:00"
+    created: "2022-07-04T09:36:15.056076748+03:00"
     description: A Helm chart to install Banzai Cloud logging-operator
     digest: ccb74bcddbaeaaf051ac6e526e2dcbab4df682553ddcce8b6808dd50600c7e26
     name: logging-operator
@@ -142,7 +142,7 @@ entries:
   logging-operator-logging:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-06-28T09:24:36.87380773+03:00"
+    created: "2022-07-04T09:36:15.057152345+03:00"
     description: A Helm chart to configure logging resource for the Logging operator
     digest: 662667f6be3c33b66f8437594040a5f3ebe8723d8a43a21dd9a73096c5afe29e
     icon: https://raw.githubusercontent.com/banzaicloud/logging-operator/master/docs/img/icon.png
@@ -153,7 +153,7 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.53.0
-    created: "2022-06-28T09:24:36.876381474+03:00"
+    created: "2022-07-04T09:36:15.060852789+03:00"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: 5d85ddf98ec42a6cb525c3949e38de1a99b5715e742d171003dbbbe3be37241e
     home: https://opentelemetry.io/
@@ -171,4 +171,30 @@ entries:
     urls:
     - opentelemetry-collector-0.20.0.tgz
     version: 0.20.0
-generated: "2022-06-28T09:24:36.828811619+03:00"
+  traefik:
+  - apiVersion: v2
+    appVersion: 2.8.0
+    created: "2022-07-04T09:36:15.065371601+03:00"
+    description: A Traefik based Kubernetes ingress controller
+    digest: 8e22876b22ddd49190b64bb219a03b2324374f860a68e9498ee05704df5b2115
+    home: https://traefik.io/
+    icon: https://raw.githubusercontent.com/traefik/traefik/v2.3/docs/content/assets/img/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    maintainers:
+    - email: emile@vauge.com
+      name: emilevauge
+    - email: daniel.tomcej@gmail.com
+      name: dtomcej
+    - email: ldez@traefik.io
+      name: ldez
+    name: traefik
+    sources:
+    - https://github.com/traefik/traefik
+    - https://github.com/traefik/traefik-helm-chart
+    type: application
+    urls:
+    - traefik-10.24.0.tgz
+    version: 10.24.0
+generated: "2022-07-04T09:36:14.998180859+03:00"
