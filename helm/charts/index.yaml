@@ -3,7 +3,7 @@ entries:
   azure-api-management-gateway:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2022-08-22T00:44:29.848951955+03:00"
+    created: "2022-09-09T22:13:58.505834182+03:00"
     description: A Helm chart to deploy the self-hosted gateway of Azure API Management
       on Kubernetes
     digest: c6d5978a5bf8ecf89b15f2442ec6fde0497be5451252748f76baef0aa780c729
@@ -39,7 +39,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.8.1
-    created: "2022-08-22T00:44:29.853419367+03:00"
+    created: "2022-09-09T22:13:58.509054234+03:00"
     description: A Helm chart for cert-manager
     digest: b8d0dd5c95398db9308b649f7ef70ca3a0db1bb8859b43f9672c7f66871d0ef9
     home: https://github.com/cert-manager/cert-manager
@@ -61,7 +61,7 @@ entries:
   echo-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-08-22T00:44:29.854238574+03:00"
+    created: "2022-09-09T22:13:58.509998082+03:00"
     description: A Helm chart for Kubernetes
     digest: 63527904752055cf1023f4ab8475b54d71a56ec39595f9f084f1766cb992178b
     name: echo-service
@@ -79,7 +79,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.57.0
-    created: "2022-08-22T00:44:29.885191526+03:00"
+    created: "2022-09-09T22:13:58.534821585+03:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -132,7 +132,7 @@ entries:
   logging-operator:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-08-22T00:44:29.892828114+03:00"
+    created: "2022-09-09T22:13:58.541888327+03:00"
     description: A Helm chart to install Banzai Cloud logging-operator
     digest: ccb74bcddbaeaaf051ac6e526e2dcbab4df682553ddcce8b6808dd50600c7e26
     name: logging-operator
@@ -142,7 +142,7 @@ entries:
   logging-operator-logging:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-08-22T00:44:29.893814504+03:00"
+    created: "2022-09-09T22:13:58.542917497+03:00"
     description: A Helm chart to configure logging resource for the Logging operator
     digest: 662667f6be3c33b66f8437594040a5f3ebe8723d8a43a21dd9a73096c5afe29e
     icon: https://raw.githubusercontent.com/banzaicloud/logging-operator/master/docs/img/icon.png
@@ -150,10 +150,31 @@ entries:
     urls:
     - logging-operator-logging-3.17.7.tgz
     version: 3.17.7
+  minio:
+  - apiVersion: v1
+    appVersion: master
+    created: "2022-09-09T22:13:58.545833704+03:00"
+    description: High Performance, Kubernetes Native Object Storage
+    digest: 0bac6eea54eb93de4e97a4961f592f652a1738ea584982015480222dd2e8d841
+    home: https://min.io
+    icon: https://min.io/resources/img/logo/MINIO_wordmark.png
+    keywords:
+    - storage
+    - object-storage
+    - S3
+    maintainers:
+    - email: dev@minio.io
+      name: MinIO, Inc
+    name: minio
+    sources:
+    - https://github.com/minio/minio
+    urls:
+    - minio-8.0.10.tgz
+    version: 8.0.10
   nginx-ingress:
   - apiVersion: v1
     appVersion: 2.3.0
-    created: "2022-08-22T00:44:29.89719137+03:00"
+    created: "2022-09-09T22:13:58.549937571+03:00"
     description: NGINX Ingress Controller
     digest: c2287f1e887a82a9d1684ef0a6f762ee30bc86c3b3492ba289fb042abffa65a8
     home: https://github.com/nginxinc/kubernetes-ingress
@@ -174,7 +195,7 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.53.0
-    created: "2022-08-22T00:44:29.901016036+03:00"
+    created: "2022-09-09T22:13:58.551652571+03:00"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: 5d85ddf98ec42a6cb525c3949e38de1a99b5715e742d171003dbbbe3be37241e
     home: https://opentelemetry.io/
@@ -195,7 +216,7 @@ entries:
   traefik:
   - apiVersion: v2
     appVersion: 2.8.0
-    created: "2022-08-22T00:44:29.905357221+03:00"
+    created: "2022-09-09T22:13:58.556010209+03:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 8e22876b22ddd49190b64bb219a03b2324374f860a68e9498ee05704df5b2115
     home: https://traefik.io/
@@ -218,4 +239,4 @@ entries:
     urls:
     - traefik-10.24.0.tgz
     version: 10.24.0
-generated: "2022-08-22T00:44:29.847640104+03:00"
+generated: "2022-09-09T22:13:58.50375436+03:00"
