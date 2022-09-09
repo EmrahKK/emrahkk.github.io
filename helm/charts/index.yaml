@@ -3,7 +3,7 @@ entries:
   azure-api-management-gateway:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2022-09-09T23:32:11.670165904+03:00"
+    created: "2022-09-09T23:50:36.189429823+03:00"
     description: A Helm chart to deploy the self-hosted gateway of Azure API Management
       on Kubernetes
     digest: c6d5978a5bf8ecf89b15f2442ec6fde0497be5451252748f76baef0aa780c729
@@ -39,7 +39,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.8.1
-    created: "2022-09-09T23:32:11.67622526+03:00"
+    created: "2022-09-09T23:50:36.194579998+03:00"
     description: A Helm chart for cert-manager
     digest: b8d0dd5c95398db9308b649f7ef70ca3a0db1bb8859b43f9672c7f66871d0ef9
     home: https://github.com/cert-manager/cert-manager
@@ -61,7 +61,7 @@ entries:
   echo-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-09-09T23:32:11.677077195+03:00"
+    created: "2022-09-09T23:50:36.195095325+03:00"
     description: A Helm chart for Kubernetes
     digest: 63527904752055cf1023f4ab8475b54d71a56ec39595f9f084f1766cb992178b
     name: echo-service
@@ -79,7 +79,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.57.0
-    created: "2022-09-09T23:32:11.703245569+03:00"
+    created: "2022-09-09T23:50:36.228433275+03:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -132,7 +132,7 @@ entries:
   logging-operator:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-09-09T23:32:11.709503731+03:00"
+    created: "2022-09-09T23:50:36.234502802+03:00"
     description: A Helm chart to install Banzai Cloud logging-operator
     digest: ccb74bcddbaeaaf051ac6e526e2dcbab4df682553ddcce8b6808dd50600c7e26
     name: logging-operator
@@ -142,7 +142,7 @@ entries:
   logging-operator-logging:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2022-09-09T23:32:11.71042081+03:00"
+    created: "2022-09-09T23:50:36.23533506+03:00"
     description: A Helm chart to configure logging resource for the Logging operator
     digest: 662667f6be3c33b66f8437594040a5f3ebe8723d8a43a21dd9a73096c5afe29e
     icon: https://raw.githubusercontent.com/banzaicloud/logging-operator/master/docs/img/icon.png
@@ -151,13 +151,23 @@ entries:
     - logging-operator-logging-3.17.7.tgz
     version: 3.17.7
   minio:
-  - apiVersion: v1
-    appVersion: RELEASE.2022-09-01T23-53-36Z
-    created: "2022-09-09T23:32:11.713986539+03:00"
-    description: Multi-Cloud Object Storage
-    digest: 35d89d8f49d53ea929466fb88ee26123431326033f1387e6b2d536a629c0a398
-    home: https://min.io
-    icon: https://min.io/resources/img/logo/MINIO_wordmark.png
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2022.9.7
+    created: "2022-09-09T23:50:36.242506978+03:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MinIO(R) is an object storage server, compatible with Amazon S3 cloud
+      storage service, mainly used for storing unstructured data (such as photos,
+      videos, log files, etc.).
+    digest: 8bba2e0f1c7b0ccb8b4155f5ca93c06beb7eee3a32c5e72e7eb959f6e283a18f
+    home: https://github.com/bitnami/charts/tree/master/bitnami/minio
+    icon: https://bitnami.com/assets/stacks/minio/img/minio-stack-220x234.png
     keywords:
     - minio
     - storage
@@ -165,18 +175,19 @@ entries:
     - s3
     - cluster
     maintainers:
-    - email: dev@minio.io
-      name: MinIO, Inc
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
     name: minio
     sources:
-    - https://github.com/minio/minio
+    - https://github.com/bitnami/containers/tree/main/bitnami/minio
+    - https://min.io
     urls:
-    - minio-4.0.14.tgz
-    version: 4.0.14
+    - minio-11.10.1.tgz
+    version: 11.10.1
   nginx-ingress:
   - apiVersion: v1
     appVersion: 2.3.0
-    created: "2022-09-09T23:32:11.717962215+03:00"
+    created: "2022-09-09T23:50:36.244167647+03:00"
     description: NGINX Ingress Controller
     digest: c2287f1e887a82a9d1684ef0a6f762ee30bc86c3b3492ba289fb042abffa65a8
     home: https://github.com/nginxinc/kubernetes-ingress
@@ -197,7 +208,7 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.53.0
-    created: "2022-09-09T23:32:11.722678194+03:00"
+    created: "2022-09-09T23:50:36.245502909+03:00"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: 5d85ddf98ec42a6cb525c3949e38de1a99b5715e742d171003dbbbe3be37241e
     home: https://opentelemetry.io/
@@ -218,7 +229,7 @@ entries:
   traefik:
   - apiVersion: v2
     appVersion: 2.8.0
-    created: "2022-09-09T23:32:11.727316076+03:00"
+    created: "2022-09-09T23:50:36.247164058+03:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 8e22876b22ddd49190b64bb219a03b2324374f860a68e9498ee05704df5b2115
     home: https://traefik.io/
@@ -241,4 +252,4 @@ entries:
     urls:
     - traefik-10.24.0.tgz
     version: 10.24.0
-generated: "2022-09-09T23:32:11.668145334+03:00"
+generated: "2022-09-09T23:50:36.187314402+03:00"
