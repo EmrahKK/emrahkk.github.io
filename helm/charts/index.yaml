@@ -1,9 +1,270 @@
 apiVersion: v1
 entries:
+  azure-api-management-gateway:
+  - apiVersion: v2
+    appVersion: 2.1.1
+    created: "2025-02-26T12:47:34.846159+03:00"
+    description: A Helm chart to deploy the self-hosted gateway of Azure API Management
+      on Kubernetes
+    digest: c6d5978a5bf8ecf89b15f2442ec6fde0497be5451252748f76baef0aa780c729
+    home: https://azure.microsoft.com/en-us/services/api-management/
+    icon: https://github.com/Azure/API-Management/raw/main/media/apim-logo.png
+    keywords:
+    - Microsoft Azure
+    - Azure
+    - API Gateway
+    - API Management
+    - Cloud
+    - Multi-Cloud
+    - Hybrid
+    - Kubernetes
+    - Cloud-Native
+    kubeVersion: '>=v1.17.0-0'
+    maintainers:
+    - name: Vlad Vinogradsky
+      url: https://github.com/vladvino
+    - name: Tom Kerkhove
+      url: https://github.com/tomkerkhove
+    name: azure-api-management-gateway
+    sources:
+    - https://github.com/Azure/api-management-self-hosted-gateway
+    urls:
+    - azure-api-management-gateway-1.3.0.tgz
+    version: 1.3.0
+  cert-manager:
+  - annotations:
+      artifacthub.io/prerelease: "false"
+      artifacthub.io/signKey: |
+        fingerprint: 1020CF3C033D4F35BAE1C19E1226061C665DF13E
+        url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
+    apiVersion: v1
+    appVersion: v1.8.1
+    created: "2025-02-26T12:47:34.848328+03:00"
+    description: A Helm chart for cert-manager
+    digest: b8d0dd5c95398db9308b649f7ef70ca3a0db1bb8859b43f9672c7f66871d0ef9
+    home: https://github.com/cert-manager/cert-manager
+    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+    keywords:
+    - cert-manager
+    - kube-lego
+    - letsencrypt
+    - tls
+    maintainers:
+    - email: cert-manager-maintainers@googlegroups.com
+      name: cert-manager-maintainers
+    name: cert-manager
+    sources:
+    - https://github.com/cert-manager/cert-manager
+    urls:
+    - cert-manager-v1.8.1.tgz
+    version: v1.8.1
+  echo-service:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-26T12:47:34.848625+03:00"
+    description: A Helm chart for Kubernetes
+    digest: 63527904752055cf1023f4ab8475b54d71a56ec39595f9f084f1766cb992178b
+    name: echo-service
+    type: application
+    urls:
+    - echo-service-0.1.0.tgz
+    version: 0.1.0
+  fluentd:
+  - annotations:
+      category: Analytics
+      images: |
+        - name: fluentd
+          image: docker.io/bitnami/fluentd:1.18.0-debian-12-r9
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 1.18.0
+    created: "2025-02-26T12:47:34.852016+03:00"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Fluentd collects events from various data sources and writes them
+      to files, RDBMS, NoSQL, IaaS, SaaS, Hadoop and so on.
+    digest: 05b4acf3a48ca8e5c8cacd64c587bf5be3de05553c5c5e510d98918d49c64bab
+    home: https://bitnami.com
+    icon: https://dyltqmyl993wv.cloudfront.net/assets/stacks/fluentd/img/fluentd-stack-220x234.png
+    keywords:
+    - fluentd
+    - logging
+    - logs
+    - data
+    - collector
+    maintainers:
+    - name: Broadcom, Inc. All Rights Reserved.
+      url: https://github.com/bitnami/charts
+    name: fluentd
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/fluentd
+    urls:
+    - fluentd-7.1.3.tgz
+    version: 7.1.3
+  kube-prometheus-stack:
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: v0.62.0
+    created: "2025-02-26T12:47:34.878947+03:00"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.24.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.8.*
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.48.*
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: 8a1a0680ff223daef7c549cbf9f0a9a59baf60b7a2134d8a01a607862ed86ecf
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: andrew@quadcorps.co.uk
+      name: andrewgkew
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: kube-prometheus-stack@sisti.pt
+      name: GMartinez-Sisti
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    - email: quentin.bisson@gmail.com
+      name: QuentinBisson
+    name: kube-prometheus-stack
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    type: application
+    urls:
+    - kube-prometheus-stack-44.2.1.tgz
+    version: 44.2.1
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: 0.57.0
+    created: "2025-02-26T12:47:34.865168+03:00"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.9.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 3.3.*
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.29.*
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: f71a4ab49082c1bcba06e83c0e1f3b9027fba00aca57d627a908901fd4ee954d
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: andrew@quadcorps.co.uk
+      name: andrewgkew
+    - name: bismarck
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: kube-prometheus-stack@sisti.pt
+      name: GMartinez-Sisti
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    name: kube-prometheus-stack
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    type: application
+    urls:
+    - kube-prometheus-stack-36.0.1.tgz
+    version: 36.0.1
+  logging-operator:
+  - apiVersion: v1
+    appVersion: 3.17.7
+    created: "2025-02-26T12:47:34.881056+03:00"
+    description: A Helm chart to install Banzai Cloud logging-operator
+    digest: ccb74bcddbaeaaf051ac6e526e2dcbab4df682553ddcce8b6808dd50600c7e26
+    name: logging-operator
+    urls:
+    - logging-operator-3.17.7.tgz
+    version: 3.17.7
+  logging-operator-logging:
+  - apiVersion: v1
+    appVersion: 3.17.7
+    created: "2025-02-26T12:47:34.881299+03:00"
+    description: A Helm chart to configure logging resource for the Logging operator
+    digest: 662667f6be3c33b66f8437594040a5f3ebe8723d8a43a21dd9a73096c5afe29e
+    icon: https://raw.githubusercontent.com/banzaicloud/logging-operator/master/docs/img/icon.png
+    name: logging-operator-logging
+    urls:
+    - logging-operator-logging-3.17.7.tgz
+    version: 3.17.7
   logstash:
   - apiVersion: v1
+    appVersion: 8.5.1
+    created: "2025-02-26T12:47:34.882579+03:00"
+    description: Official Elastic helm chart for Logstash
+    digest: 70aace1eb5ecb759942e60ffd192a849330582900658a6b306055a9530adb44b
+    home: https://github.com/elastic/helm-charts
+    icon: https://helm.elastic.co/icons/logstash.png
+    maintainers:
+    - email: helm-charts@elastic.co
+      name: Elastic
+    name: logstash
+    sources:
+    - https://github.com/elastic/logstash
+    urls:
+    - logstash-8.5.1.tgz
+    version: 8.5.1
+  - apiVersion: v1
     appVersion: 7.16.2
-    created: "2025-02-26T12:34:55.115472+03:00"
+    created: "2025-02-26T12:47:34.881927+03:00"
     description: Official Elastic helm chart for Logstash
     digest: 76326cb0014802163856adaf6169280d3de2f858cb06e44b3060caab4f0e2c45
     home: https://github.com/elastic/helm-charts
@@ -17,4 +278,198 @@ entries:
     urls:
     - logstash-7.16.2.tgz
     version: 7.16.2
-generated: "2025-02-26T12:34:55.114458+03:00"
+  loki-stack:
+  - apiVersion: v1
+    appVersion: v2.6.1
+    created: "2025-02-26T12:47:34.88946+03:00"
+    dependencies:
+    - condition: loki.enabled
+      name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: ^2.15.2
+    - condition: promtail.enabled
+      name: promtail
+      repository: https://grafana.github.io/helm-charts
+      version: ^6.2.3
+    - condition: fluent-bit.enabled
+      name: fluent-bit
+      repository: https://grafana.github.io/helm-charts
+      version: ^2.3.0
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: ~6.24.1
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ~15.5.3
+    - condition: filebeat.enabled
+      name: filebeat
+      repository: https://helm.elastic.co
+      version: ~7.17.1
+    - condition: logstash.enabled
+      name: logstash
+      repository: https://helm.elastic.co
+      version: ~7.17.1
+    description: 'Loki: like Prometheus, but for logs.'
+    digest: 70f00947952b2bdf52716a246292ab5d0e98f9be4008e40439725c00fce7a960
+    home: https://grafana.com/loki
+    icon: https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.png
+    kubeVersion: ^1.10.0-0
+    maintainers:
+    - email: lokiproject@googlegroups.com
+      name: Loki Maintainers
+    name: loki-stack
+    sources:
+    - https://github.com/grafana/loki
+    urls:
+    - loki-stack-2.8.2.tgz
+    version: 2.8.2
+  minio:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2022.9.7
+    created: "2025-02-26T12:47:34.891636+03:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MinIO(R) is an object storage server, compatible with Amazon S3 cloud
+      storage service, mainly used for storing unstructured data (such as photos,
+      videos, log files, etc.).
+    digest: 8bba2e0f1c7b0ccb8b4155f5ca93c06beb7eee3a32c5e72e7eb959f6e283a18f
+    home: https://github.com/bitnami/charts/tree/master/bitnami/minio
+    icon: https://bitnami.com/assets/stacks/minio/img/minio-stack-220x234.png
+    keywords:
+    - minio
+    - storage
+    - object-storage
+    - s3
+    - cluster
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: minio
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/minio
+    - https://min.io
+    urls:
+    - minio-11.10.1.tgz
+    version: 11.10.1
+  nginx-ingress:
+  - apiVersion: v1
+    appVersion: 2.3.0
+    created: "2025-02-26T12:47:34.892705+03:00"
+    description: NGINX Ingress Controller
+    digest: c2287f1e887a82a9d1684ef0a6f762ee30bc86c3b3492ba289fb042abffa65a8
+    home: https://github.com/nginxinc/kubernetes-ingress
+    icon: https://raw.githubusercontent.com/nginxinc/kubernetes-ingress/v2.3.0/deployments/helm-chart/chart-icon.png
+    keywords:
+    - ingress
+    - nginx
+    kubeVersion: '>= 1.19.0-0'
+    maintainers:
+    - email: kubernetes@nginx.com
+      name: nginxinc
+    name: nginx-ingress
+    sources:
+    - https://github.com/nginxinc/kubernetes-ingress/tree/v2.3.0/deployments/helm-chart
+    urls:
+    - nginx-ingress-0.14.0.tgz
+    version: 0.14.0
+  opentelemetry-collector:
+  - apiVersion: v2
+    appVersion: 0.53.0
+    created: "2025-02-26T12:47:34.893569+03:00"
+    description: OpenTelemetry Collector Helm chart for Kubernetes
+    digest: 5d85ddf98ec42a6cb525c3949e38de1a99b5715e742d171003dbbbe3be37241e
+    home: https://opentelemetry.io/
+    icon: https://opentelemetry.io/img/logos/opentelemetry-logo-nav.png
+    maintainers:
+    - name: bogdandrutu
+    - name: dmitryax
+    - name: pjanotti
+    - name: tigrannajaryan
+    name: opentelemetry-collector
+    sources:
+    - https://github.com/open-telemetry/opentelemetry-collector
+    - https://github.com/open-telemetry/opentelemetry-collector-contrib
+    type: application
+    urls:
+    - opentelemetry-collector-0.20.0.tgz
+    version: 0.20.0
+  opentelemetry-operator:
+  - apiVersion: v2
+    appVersion: 0.67.0
+    created: "2025-02-26T12:47:34.89512+03:00"
+    description: OpenTelemetry Operator Helm chart for Kubernetes
+    digest: afa87a31aeed0b2d3ff44b2d8e03c34cae488d6abe8c3e204f2dd031bf3d75dd
+    home: https://opentelemetry.io/
+    icon: https://raw.githubusercontent.com/cncf/artwork/a718fa97fffec1b9fd14147682e9e3ac0c8817cb/projects/opentelemetry/icon/color/opentelemetry-icon-color.png
+    maintainers:
+    - name: Allex1
+    - name: dmitryax
+    - name: TylerHelmuth
+    name: opentelemetry-operator
+    sources:
+    - https://github.com/open-telemetry/opentelemetry-operator
+    type: application
+    urls:
+    - opentelemetry-operator-0.21.2.tgz
+    version: 0.21.2
+  traefik:
+  - apiVersion: v2
+    appVersion: 2.8.0
+    created: "2025-02-26T12:47:34.896214+03:00"
+    description: A Traefik based Kubernetes ingress controller
+    digest: 8e22876b22ddd49190b64bb219a03b2324374f860a68e9498ee05704df5b2115
+    home: https://traefik.io/
+    icon: https://raw.githubusercontent.com/traefik/traefik/v2.3/docs/content/assets/img/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    maintainers:
+    - email: emile@vauge.com
+      name: emilevauge
+    - email: daniel.tomcej@gmail.com
+      name: dtomcej
+    - email: ldez@traefik.io
+      name: ldez
+    name: traefik
+    sources:
+    - https://github.com/traefik/traefik
+    - https://github.com/traefik/traefik-helm-chart
+    type: application
+    urls:
+    - traefik-10.24.0.tgz
+    version: 10.24.0
+  vault:
+  - apiVersion: v2
+    appVersion: 1.11.3
+    created: "2025-02-26T12:47:34.897738+03:00"
+    description: Official HashiCorp Vault Chart
+    digest: ae95120ca4cd0955b3c25d43cf8d0325ea3bc902452f883d880d6307503c0955
+    home: https://www.vaultproject.io
+    icon: https://github.com/hashicorp/vault/raw/f22d202cde2018f9455dec755118a9b84586e082/Vault_PrimaryLogo_Black.png
+    keywords:
+    - vault
+    - security
+    - encryption
+    - secrets
+    - management
+    - automation
+    - infrastructure
+    kubeVersion: '>= 1.16.0-0'
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault
+    - https://github.com/hashicorp/vault-helm
+    - https://github.com/hashicorp/vault-k8s
+    - https://github.com/hashicorp/vault-csi-provider
+    urls:
+    - vault-0.22.0.tgz
+    version: 0.22.0
+generated: "2025-02-26T12:47:34.845385+03:00"
