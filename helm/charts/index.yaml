@@ -3,7 +3,7 @@ entries:
   azure-api-management-gateway:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2025-02-26T16:22:11.958428+03:00"
+    created: "2025-02-27T12:46:47.207632+03:00"
     description: A Helm chart to deploy the self-hosted gateway of Azure API Management
       on Kubernetes
     digest: c6d5978a5bf8ecf89b15f2442ec6fde0497be5451252748f76baef0aa780c729
@@ -39,7 +39,7 @@ entries:
         url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
     apiVersion: v1
     appVersion: v1.8.1
-    created: "2025-02-26T16:22:11.960581+03:00"
+    created: "2025-02-27T12:46:47.210434+03:00"
     description: A Helm chart for cert-manager
     digest: b8d0dd5c95398db9308b649f7ef70ca3a0db1bb8859b43f9672c7f66871d0ef9
     home: https://github.com/cert-manager/cert-manager
@@ -61,7 +61,7 @@ entries:
   echo-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-02-26T16:22:11.960895+03:00"
+    created: "2025-02-27T12:46:47.210898+03:00"
     description: A Helm chart for Kubernetes
     digest: 63527904752055cf1023f4ab8475b54d71a56ec39595f9f084f1766cb992178b
     name: echo-service
@@ -78,7 +78,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 1.18.0
-    created: "2025-02-26T16:22:11.964294+03:00"
+    created: "2025-02-27T12:46:47.214914+03:00"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -116,7 +116,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v0.62.0
-    created: "2025-02-26T16:22:11.99079+03:00"
+    created: "2025-02-27T12:46:47.243059+03:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -174,7 +174,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.57.0
-    created: "2025-02-26T16:22:11.97727+03:00"
+    created: "2025-02-27T12:46:47.228684+03:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -227,7 +227,7 @@ entries:
   logging-operator:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2025-02-26T16:22:11.992834+03:00"
+    created: "2025-02-27T12:46:47.245514+03:00"
     description: A Helm chart to install Banzai Cloud logging-operator
     digest: ccb74bcddbaeaaf051ac6e526e2dcbab4df682553ddcce8b6808dd50600c7e26
     name: logging-operator
@@ -237,7 +237,7 @@ entries:
   logging-operator-logging:
   - apiVersion: v1
     appVersion: 3.17.7
-    created: "2025-02-26T16:22:11.993059+03:00"
+    created: "2025-02-27T12:46:47.245877+03:00"
     description: A Helm chart to configure logging resource for the Logging operator
     digest: 662667f6be3c33b66f8437594040a5f3ebe8723d8a43a21dd9a73096c5afe29e
     icon: https://raw.githubusercontent.com/banzaicloud/logging-operator/master/docs/img/icon.png
@@ -248,7 +248,7 @@ entries:
   logstash:
   - apiVersion: v1
     appVersion: 8.5.1
-    created: "2025-02-26T16:22:11.996196+03:00"
+    created: "2025-02-27T12:46:47.249263+03:00"
     description: Official Elastic helm chart for Logstash
     digest: 70aace1eb5ecb759942e60ffd192a849330582900658a6b306055a9530adb44b
     home: https://github.com/elastic/helm-charts
@@ -264,7 +264,7 @@ entries:
     version: 8.5.1
   - apiVersion: v1
     appVersion: 7.17.3
-    created: "2025-02-26T16:22:11.99558+03:00"
+    created: "2025-02-27T12:46:47.248484+03:00"
     description: Official Elastic helm chart for Logstash
     digest: 8d090828ace9442fb2d64c1576474b422fd498b8eb56d33438e3bcc59e4fccb2
     home: https://github.com/elastic/helm-charts
@@ -288,7 +288,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 8.17.2
-    created: "2025-02-26T16:22:11.99494+03:00"
+    created: "2025-02-27T12:46:47.247713+03:00"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -317,7 +317,7 @@ entries:
   loki-stack:
   - apiVersion: v1
     appVersion: v2.6.1
-    created: "2025-02-26T16:22:12.003333+03:00"
+    created: "2025-02-27T12:46:47.256685+03:00"
     dependencies:
     - condition: loki.enabled
       name: loki
@@ -366,7 +366,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 2022.9.7
-    created: "2025-02-26T16:22:12.005189+03:00"
+    created: "2025-02-27T12:46:47.258816+03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -398,7 +398,7 @@ entries:
   nginx-ingress:
   - apiVersion: v1
     appVersion: 2.3.0
-    created: "2025-02-26T16:22:12.006202+03:00"
+    created: "2025-02-27T12:46:47.260412+03:00"
     description: NGINX Ingress Controller
     digest: c2287f1e887a82a9d1684ef0a6f762ee30bc86c3b3492ba289fb042abffa65a8
     home: https://github.com/nginxinc/kubernetes-ingress
@@ -419,7 +419,7 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.53.0
-    created: "2025-02-26T16:22:12.007326+03:00"
+    created: "2025-02-27T12:46:47.261488+03:00"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: 5d85ddf98ec42a6cb525c3949e38de1a99b5715e742d171003dbbbe3be37241e
     home: https://opentelemetry.io/
@@ -440,7 +440,7 @@ entries:
   opentelemetry-operator:
   - apiVersion: v2
     appVersion: 0.67.0
-    created: "2025-02-26T16:22:12.008557+03:00"
+    created: "2025-02-27T12:46:47.262849+03:00"
     description: OpenTelemetry Operator Helm chart for Kubernetes
     digest: afa87a31aeed0b2d3ff44b2d8e03c34cae488d6abe8c3e204f2dd031bf3d75dd
     home: https://opentelemetry.io/
@@ -459,7 +459,7 @@ entries:
   traefik:
   - apiVersion: v2
     appVersion: 2.8.0
-    created: "2025-02-26T16:22:12.009637+03:00"
+    created: "2025-02-27T12:46:47.264023+03:00"
     description: A Traefik based Kubernetes ingress controller
     digest: 8e22876b22ddd49190b64bb219a03b2324374f860a68e9498ee05704df5b2115
     home: https://traefik.io/
@@ -485,7 +485,7 @@ entries:
   vault:
   - apiVersion: v2
     appVersion: 1.11.3
-    created: "2025-02-26T16:22:12.012+03:00"
+    created: "2025-02-27T12:46:47.266141+03:00"
     description: Official HashiCorp Vault Chart
     digest: ae95120ca4cd0955b3c25d43cf8d0325ea3bc902452f883d880d6307503c0955
     home: https://www.vaultproject.io
@@ -508,4 +508,41 @@ entries:
     urls:
     - vault-0.22.0.tgz
     version: 0.22.0
-generated: "2025-02-26T16:22:11.957277+03:00"
+  vector:
+  - annotations:
+      artifacthub.io/images: |
+        - name: vector
+          image: timberio/vector:0.45.0-distroless-libc
+        - name: haproxy
+          image: haproxytech/haproxy-alpine:2.6.12
+      artifacthub.io/license: MPL-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/vectordotdev/helm-charts
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 0.45.0-distroless-libc
+    created: "2025-02-27T12:46:47.267347+03:00"
+    description: A lightweight, ultra-fast tool for building observability pipelines
+    digest: 8ca47d62d684ca345bbcf83ef04f9a035003e6a3d8baa643d374758ed1709864
+    home: https://vector.dev/
+    icon: https://vector.dev/press/vector-icon.svg
+    keywords:
+    - vector
+    - events
+    - logs
+    - metrics
+    - observability
+    - stream-processing
+    kubeVersion: '>=1.15.0-0'
+    maintainers:
+    - email: vector@datadoghq.com
+      name: Datadog
+    name: vector
+    sources:
+    - https://github.com/vectordotdev/vector/
+    type: application
+    urls:
+    - vector-0.41.0.tgz
+    version: 0.41.0
+generated: "2025-02-27T12:46:47.205964+03:00"
