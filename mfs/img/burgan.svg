@@ -1,10 +1,16 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="180.771px" height="82.032px" viewBox="0 0 226.771 82.032" enable-background="new 0 0 226.771 82.032"
-	 xml:space="preserve">
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 226.771 82.032"
+     preserveAspectRatio="xMidYMid meet">
   <defs>
-    <style>.cls-1{fill:#1093cf;}.cls-2{fill:#f78e20;}.cls-3{fill:#086aac;}</style>
-      <filter id="white-shadow" x="-50%" y="-50%" width="200%" height="200%">
-        <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="white" />
+    <style>
+      .cls-1 { fill: #1093cf; }
+      .cls-2 { fill: #f78e20; }
+      .cls-3 { fill: #086aac; }
+    </style>
+    <filter id="white-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="white" />
     </filter>
   </defs>
   <g id="Layer_2" data-name="Layer 2" filter="url(#white-shadow)">
