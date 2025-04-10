@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 226.771 60.032">
-    <defs>
-    <style>.cls-1{fill:#1093cf;}.cls-2{fill:#f78e20;}.cls-3{fill:#086aac;}</style>
-    <filter id="whiteShadow" x="-50%" y="-50%" width="200%" height="200%">
-      <!-- Adjust dx, dy, and stdDeviation as needed -->
-      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="white" />
+  <defs>
+    <style>
+      .cls-1{fill:#1093cf;}.cls-2{fill:#f78e20;}.cls-3{fill:#086aac;}
+    </style>
+    <filter id="white-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="white"/>
     </filter>
-    </defs>
+  </defs>
     <g id="Layer_2" data-name="Layer 2" filter="url(#white-shadow)">
         <g id="Layer_1-2" data-name="Layer 1">
             <path class="cls-1"
