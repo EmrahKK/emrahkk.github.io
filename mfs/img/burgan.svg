@@ -1,8 +1,7 @@
-<svg version="1.1"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 226.771 82.032"
-     preserveAspectRatio="xMidYMid meet">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="226.771px" height="82.032px" viewBox="0 0 226.771 82.032" enable-background="new 0 0 226.771 82.032"
+	 xml:space="preserve">
+<pattern  x="113.385" y="182.748" width="69" height="69" patternUnits="userSpaceOnUse" id="Polka_Dot_Pattern" viewBox="2.125 -70.896 69 69" overflow="visible">
   <defs>
     <style>
       .cls-1 { fill: #1093cf; }
