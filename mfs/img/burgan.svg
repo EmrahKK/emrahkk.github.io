@@ -6,7 +6,7 @@
       <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="white" />
     </filter>
     </defs>
-    <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_2" data-name="Layer 2" filter="url(#white-shadow)">
         <g id="Layer_1-2" data-name="Layer 1">
             <path class="cls-1"
                 d="M37.33,1l8.92,10.06.54.61c3.84,4.77-.63,15.86-10.12,25.77C27,47.58,15.89,52.91,10.75,48.52L0,39.91c2.07,1.3,5.68.65,10-1.55l.27-.13.16-.09A60.44,60.44,0,0,0,25.06,26.59,60.66,60.66,0,0,0,36,11.41c0-.07.06-.12.08-.18L36.2,11C38.18,6.64,38.68,3,37.33,1" />
