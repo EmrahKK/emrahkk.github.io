@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 226.771 60.032">
     <defs>
-        <style>.cls-1{fill:#1093cf;}.cls-2{fill:#f78e20;}.cls-3{fill:#086aac;}</style>
-            <style>.cls-1{fill:#1093cf;}.cls-2{fill:#f78e20;}.cls-3{fill:#086aac;}</style>
-        <filter id="white-shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="white" />
-        </filter>
+    <style>.cls-1{fill:#1093cf;}.cls-2{fill:#f78e20;}.cls-3{fill:#086aac;}</style>
+      <filter id="white-shadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="white" />
+    </filter>
     </defs>
     <g id="Layer_2" data-name="Layer 2">
         <g id="Layer_1-2" data-name="Layer 1">
